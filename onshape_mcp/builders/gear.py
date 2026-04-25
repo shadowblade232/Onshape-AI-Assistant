@@ -1,7 +1,7 @@
 """Gear feature builder for Onshape."""
 
-from typing import Any, Dict, Optional
 from enum import Enum
+from typing import Any, Dict
 
 
 class GearType(Enum):
@@ -111,10 +111,6 @@ class GearBuilder:
         Returns:
             Feature definition for Onshape API
         """
-        # Calculate gear dimensions
-        pitch_diameter = self.calculate_pitch_diameter()
-        outer_radius = (pitch_diameter / 2) * 1.1  # Approximate outer radius
-
         # For now, we'll create a simplified gear using a sketch with circles
         # A full involute gear profile would require FeatureScript
 
@@ -140,7 +136,7 @@ class GearBuilder:
             Custom feature definition
         """
         # FeatureScript code for generating an involute spur gear
-        gear_script = f"""
+        gear_script = """
         FeatureScript 2856;
         import(path : "onshape/std/common.fs", version : "2856.0");
 

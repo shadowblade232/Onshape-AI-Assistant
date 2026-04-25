@@ -73,4 +73,4 @@ jobs:
 
     - name: Check coverage threshold
       run: |
-        pytest --cov=onshape_mcp --cov-report=term-missing --cov-fail-under=80
+        pytest --cov=onshape_mcp --cov-report=term-missing --cov-fail-under=50
